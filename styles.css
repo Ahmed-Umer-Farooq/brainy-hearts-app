@@ -24,11 +24,11 @@ body.dark-mode {
     --toggle-icon-color: #2a2a40;
 }
 
-/* --- 2. SCREENS (PRELOADER, START) --- */
-#splash-screen, #start-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--bg-gradient); display: flex; align-items: center; justify-content: center; z-index: 1001; transition: opacity 0.75s ease-out, visibility 0.75s; }
-#splash-screen.hidden, #start-screen.hidden { opacity: 0; visibility: hidden; }
+/* --- 2. SCREENS (PRELOADER, START, MODE SELECT) --- */
+#splash-screen, #start-screen, #love-mode-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--bg-gradient); display: flex; align-items: center; justify-content: center; z-index: 1001; transition: opacity 0.75s ease-out, visibility 0.75s; }
+#splash-screen.hidden, #start-screen.hidden, #love-mode-screen.hidden { opacity: 0; visibility: hidden; }
 .splash-heart { font-size: 80px; animation: heartbeat 1.5s infinite ease-in-out; }
-.start-content { text-align: center; animation: fadeIn 1.5s ease-in-out; }
+.start-content { text-align: center; animation: fadeIn 1.5s ease-in-out; position: relative; width: 90%; }
 .start-title { font-family: 'Dancing Script', cursive; color: var(--header-color); font-size: 8vw; margin: 0; text-shadow: 2px 2px 5px var(--shadow-color); }
 .start-subtitle { font-size: 1.2rem; margin: 10px 0 25px; opacity: 0.8; }
 .start-button-group { display: flex; flex-direction: column; gap: 15px; }
@@ -50,37 +50,42 @@ body.dark-mode {
 .open-reward-btn:hover { background: var(--primary-accent); transform: scale(1.05); }
 
 /* --- 4. GENERAL LAYOUT & CONTAINER --- */
-body { margin: 0; padding-bottom: 50px; font-family: 'Poppins', sans-serif; background: var(--bg-gradient); color: var(--text-color); display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow-x: hidden; position: relative; transition: background 0.5s ease, color 0.5s ease; }
+body { margin: 0; padding-bottom: 80px; font-family: 'Poppins', sans-serif; background: var(--bg-gradient); color: var(--text-color); transition: background 0.5s ease, color 0.5s ease; }
+main#app-wrapper { display: grid; place-items: center; min-height: 100vh; }
 .container { background: var(--container-bg); backdrop-filter: blur(10px); padding: 30px 35px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 15px 40px var(--shadow-color); text-align: center; max-width: 500px; width: 90%; position: relative; z-index: 1; transition: background 0.5s ease; }
 .container:not(.hidden) { animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .theme-toggle { position: absolute; top: 20px; right: 20px; background: var(--primary-accent); color: var(--toggle-icon-color); border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 100; transition: background 0.3s, transform 0.3s; }
 .home-btn { position: absolute; top: 20px; left: 20px; background: var(--secondary-accent); color: white; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 100; transition: all 0.3s; }
 .theme-toggle:hover, .home-btn:hover { transform: scale(1.1) rotate(15deg); }
-.footer { position: absolute; bottom: 15px; width: 100%; text-align: center; font-size: 14px; color: var(--text-color); opacity: 0.7; transition: color 0.5s ease; }
+.footer { position: fixed; bottom: 0; left: 0; width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); text-align: center; font-size: 14px; color: var(--text-color); opacity: 0.9; z-index: 10; transition: color 0.5s, background 0.5s; }
+body.dark-mode .footer { background: rgba(0, 0, 0, 0.3); }
+.footer a { color: var(--primary-accent); text-decoration: none; font-weight: 600; }
 h1 { font-family: 'Dancing Script', cursive; color: var(--header-color); font-size: 42px; margin: 0 0 25px 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); transition: color 0.5s ease; }
 
 /* --- 5. SOULMATES CALCULATOR STYLES --- */
 .input-grid { display: flex; gap: 20px; }
+.input-grid-single { display: flex; flex-direction: column; gap: 10px; }
 .input-column { flex: 1; display: flex; flex-direction: column; gap: 10px; }
-input { width: 100%; box-sizing: border-box; padding: 14px 20px; border: 2px solid var(--border-color); border-radius: 15px; font-size: 16px; font-family: 'Poppins', sans-serif; outline: none; transition: all 0.3s ease; background: transparent; color: var(--text-color); }
-input::placeholder { color: var(--text-color); opacity: 0.7; }
-input:focus { border-color: var(--primary-accent); box-shadow: 0 0 12px var(--primary-accent); }
+input, select { width: 100%; box-sizing: border-box; padding: 14px 20px; border: 2px solid var(--border-color); border-radius: 15px; font-size: 16px; font-family: 'Poppins', sans-serif; outline: none; transition: all 0.3s ease; background: transparent; color: var(--text-color); }
+select { appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e91e63%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 10px auto; }
+body.dark-mode select { background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ff8ad8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E'); }
+input::placeholder, select:invalid { color: var(--text-color); opacity: 0.7; }
+input:focus, select:focus { border-color: var(--primary-accent); box-shadow: 0 0 12px var(--primary-accent); }
 input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; cursor: pointer; }
 .button-group { display: flex; gap: 15px; margin-top: 25px; }
 button { flex: 1; background: var(--primary-accent); color: white; border: none; padding: 14px 20px; border-radius: 50px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px var(--shadow-color); }
 button:hover:not(:disabled) { transform: translateY(-4px); box-shadow: 0 8px 25px var(--primary-accent); }
 button:active:not(:disabled) { transform: translateY(-1px); }
 button:disabled { background-color: #999; box-shadow: none; cursor: not-allowed; opacity: 0.7; }
-#resetBtn { background: var(--secondary-accent); }
 .result { margin-top: 30px; font-size: 18px; line-height: 1.7; min-height: 150px; display: flex; flex-direction: column; justify-content: center; transition: all 0.5s ease; }
-#result-message { font-weight: 600; font-size: 20px; color: var(--header-color); margin-top: 15px; }
 .progress-container { width: 100%; background-color: var(--border-color); border-radius: 20px; margin: 15px 0 0 0; height: 20px; overflow: hidden; }
-#progressBar { width: 0; height: 100%; background: var(--primary-accent); border-radius: 20px; transition: width 2s cubic-bezier(0.23, 1, 0.32, 1); }
+.progress-bar { width: 0%; height: 100%; background: var(--primary-accent); border-radius: 20px; transition: width 2s cubic-bezier(0.23, 1, 0.32, 1); }
 .sorry-message { margin-top: 15px; font-style: italic; opacity: 0.8; font-weight: 500; color: var(--secondary-accent); }
 
 /* --- 6. IQ TEST STYLES --- */
-#iq-test-screen .home-btn { background: var(--iq-accent); }
-#iq-test-screen .theme-toggle { background: var(--iq-accent); }
+#iq-test-screen .home-btn, #one-sided-screen .home-btn, #love-mode-screen .home-btn { background: var(--iq-accent); }
+#iq-test-screen .theme-toggle, #one-sided-screen .theme-toggle { background: var(--iq-accent); }
+#committed-screen .home-btn { background: var(--secondary-accent); }
 .iq-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; font-weight: 600; font-size: 1.1rem; padding-top: 50px; position: relative; }
 #iq-timer { background: var(--iq-accent); color: white; padding: 5px 15px; border-radius: 20px; }
 #iq-question-text { font-size: 1.4rem; min-height: 80px; }
@@ -104,5 +109,5 @@ canvas#confetti-canvas { position: fixed; top: 0; left: 0; width: 100vw; height:
 @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-90vh) scale(1.8); opacity: 0; } }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
 .visually-hidden, .hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-#soulmates-screen.hidden, #iq-test-screen.hidden, #iq-result-screen.hidden, .modal-overlay.hidden { display: none; }
-@media screen and (max-width: 600px) { .start-title { font-size: 12vw; } .container { padding: 25px 20px; width: 88%; } h1 { font-size: 36px; } .input-grid { flex-direction: column; } #iq-options-container { grid-template-columns: 1fr; } #iq-result-screen .button-group { flex-direction: column; } .button-group { flex-direction: column; } input { width: 90%; margin: 5px 0; } .theme-toggle, #soulmates-screen .home-btn, #iq-test-screen .home-btn { top: 15px; } #soulmates-screen .home-btn, #iq-test-screen .home-btn { left: 15px; } .theme-toggle { right: 15px; } }
+#committed-screen.hidden, #one-sided-screen.hidden, #iq-test-screen.hidden, #iq-result-screen.hidden, .modal-overlay.hidden, #love-mode-screen.hidden { display: none; }
+@media screen and (max-width: 600px) { .start-title { font-size: 12vw; } .container { padding: 25px 20px; width: 88%; } h1 { font-size: 36px; } .input-grid { flex-direction: column; } #iq-options-container { grid-template-columns: 1fr; } #iq-result-screen .button-group { flex-direction: column; } .button-group { flex-direction: column; } input, select { width: 90%; margin: 5px auto; } .theme-toggle, #committed-screen .home-btn, #one-sided-screen .home-btn, #iq-test-screen .home-btn, #love-mode-screen .home-btn { top: 15px; } #committed-screen .home-btn, #one-sided-screen .home-btn, #iq-test-screen .home-btn, #love-mode-screen .home-btn { left: 15px; } .theme-toggle { right: 15px; } }
