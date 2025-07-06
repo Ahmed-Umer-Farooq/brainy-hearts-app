@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainy Hearts ❤️ | Love & Logic Games</title>
+    
+    <meta name="description" content="Test your love compatibility and challenge your mind! Brainy Hearts is your hub for fun games of the heart and the brain.">
+    <meta name="keywords" content="brainy hearts, love calculator, iq test, compatibility test, zodiac match, brain game, quiz">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-live-url.com/">
+    <meta property="og:title" content="Brainy Hearts ❤️ | Love & Logic Games">
+    <meta property="og:description" content="Test your love compatibility and challenge your mind with this fun and beautiful app!">
+    <meta property="og:image" content="https://i.imgur.com/G5gT7bW.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-live-url.com/">
+    <meta property="twitter:title" content="Brainy Hearts ❤️ | Love & Logic Games">
+    <meta property="twitter:description" content="Test your love compatibility and challenge your mind with this fun and beautiful app!">
+    <meta property="twitter:image" content="https://i.imgur.com/G5gT7bW.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Splash Screen (Preloader) -->
+    <div id="splash-screen">
+        <div class="splash-heart">❤️</div>
+    </div>
+
+    <!-- Start Screen Hub -->
+    <div id="start-screen">
+        <div class="start-content">
+            <h2 class="start-title">Brainy Hearts</h2>
+            <p class="start-subtitle">What would you like to do?</p>
+            <div class="start-button-group">
+                <button id="startSoulmatesBtn" class="start-button">💖 Love Calculator</button>
+                <button id="startIQBtn" class="start-button iq-button">🧠 IQ Test</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container (Soulmates Calculator) -->
+    <div id="soulmates-screen" class="container hidden">
+        <button id="homeBtn" class="home-btn" aria-label="Back to Home">🏠</button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        <h1>Love Calculator</h1>
+
+        <div class="input-grid">
+            <div class="input-column">
+                <label for="name1" class="visually-hidden">Your Name</label>
+                <input type="text" id="name1" placeholder="Your Name" autocomplete="off">
+                <label for="bday1" class="visually-hidden">Your Birthdate</label>
+                <input type="date" id="bday1" title="Your Birthdate">
+                <label for="country1" class="visually-hidden">Your Country</label>
+                <input type="text" id="country1" placeholder="Your Country" autocomplete="off">
+                <label for="sport1" class="visually-hidden">Your Favorite Sport</label>
+                <input type="text" id="sport1" placeholder="Your Favorite Sport" autocomplete="off">
+            </div>
+            <div class="input-column">
+                <label for="name2" class="visually-hidden">Partner's Name</label>
+                <input type="text" id="name2" placeholder="Partner's Name" autocomplete="off">
+                <label for="bday2" class="visually-hidden">Partner's Birthdate</label>
+                <input type="date" id="bday2" title="Your Birthdate">
+                <label for="country2" class="visually-hidden">Partner's Country</label>
+                <input type="text" id="country2" placeholder="Partner's Country" autocomplete="off">
+                <label for="sport2" class="visually-hidden">Partner's Favorite Sport</label>
+                <input type="text" id="sport2" placeholder="Partner's Favorite Sport" autocomplete="off">
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button id="calculateBtn">Calculate Love ❤️</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <!-- IQ Test Screen -->
+    <div id="iq-test-screen" class="container hidden">
+        <button id="iq-quit-btn" class="home-btn" aria-label="Quit and go Home">🏠</button>
+        <button id="iq-theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        <div class="iq-header">
+            <div id="iq-question-counter">Question 1/5</div>
+            <div id="iq-timer">15s</div>
+        </div>
+        <h2 id="iq-question-text"></h2>
+        <div id="iq-options-container"></div>
+    </div>
+
+    <!-- IQ Result Screen -->
+    <div id="iq-result-screen" class="container hidden">
+        <h1>IQ Test Complete!</h1>
+        <p>Your Score:</p>
+        <div id="iq-final-score"></div>
+        <p id="iq-result-message"></p>
+        <div id="brain-analysis" class="brain-analysis">
+            <div id="brain-analysis-emoji"></div>
+            <div id="brain-analysis-text"></div>
+        </div>
+        <div class="button-group">
+            <button id="iq-restart-btn">Try Again</button>
+            <button id="iq-back-to-home-btn">Back to Home</button>
+        </div>
+    </div>
+    
+    <!-- Reward Reveal Modal -->
+    <div id="reward-reveal-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="closeRewardBtn" class="close-btn">×</button>
+            <h2 id="reward-title">A Reward Unlocked!</h2>
+            <div id="reward-emoji" class="reward-reveal-emoji"></div>
+            <p id="reward-text" class="reward-text-content"></p>
+        </div>
+    </div>
+    
+    <footer class="footer">
+      <p>Made by Umer ❤️</p>
+    </footer>
+    
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-modern-technology-select-3124.mp3" preload="auto"></audio>
+    <audio id="celebrationSound" src="https://assets.mixkit.co/sfx/preview/mixkit-fairy-bell-bless-864.mp3" preload="auto"></audio>
+    <audio id="perfectMatchSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-magic-dream-swoosh-2425.mp3" preload="auto"></audio>
+    <audio id="rewardUnlockSound" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" preload="auto"></audio>
+
+    <canvas id="confetti-canvas"></canvas>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
