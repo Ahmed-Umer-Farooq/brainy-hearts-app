@@ -7,25 +7,23 @@
     
     <meta name="description" content="Test your love compatibility and challenge your mind! Brainy Hearts is your hub for fun games of the heart and the brain.">
     <meta name="keywords" content="brainy hearts, love calculator, iq test, compatibility test, zodiac match, brain game, quiz">
-    <link rel="icon" type="image/png" href="favicon.png">
-
+    
     <!-- PWA Manifest & Theme Color -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#e91e63">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
 
-    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://brainy-hearts-by-umer.netlify.app/">
+    <!-- Social Media Preview -->
     <meta property="og:title" content="Brainy Hearts ❤️ | Love & Logic Games">
     <meta property="og:description" content="Test your love compatibility and challenge your mind with this fun and beautiful app!">
     <meta property="og:image" content="preview.jpg">
+    <meta property="og:url" content="https://brainy-hearts-by-umer.netlify.app/">
+    <meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://brainy-hearts-by-umer.netlify.app/">
-    <meta property="twitter:title" content="Brainy Hearts ❤️ | Love & Logic Games">
-    <meta property="twitter:description" content="Test your love compatibility and challenge your mind with this fun and beautiful app!">
-    <meta property="twitter:image" content="preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brainy Hearts ❤️ | Love & Logic Games">
+    <meta name="twitter:description" content="Test your love compatibility and challenge your mind with this fun and beautiful app!">
+    <meta name="twitter:image" content="preview.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -33,12 +31,10 @@
 <body>
 
     <main id="app-wrapper">
-        <!-- Splash Screen (Preloader) -->
+        <!-- The rest of your HTML remains the same -->
         <div id="splash-screen">
             <div class="splash-heart">❤️</div>
         </div>
-
-        <!-- Start Screen Hub -->
         <div id="start-screen">
             <div class="start-content">
                 <h2 class="start-title">Brainy Hearts</h2>
@@ -49,8 +45,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Love Calculator Mode Selection Screen -->
         <div id="love-mode-screen" class="hidden">
             <div class="start-content">
                 <button id="love-mode-home-btn" class="home-btn" aria-label="Back to Home">🏠</button>
@@ -62,73 +56,25 @@
                 </div>
             </div>
         </div>
-
-        <!-- Main App Container (Committed Love Calculator) -->
         <div id="committed-screen" class="container hidden">
             <button id="committed-home-btn" class="home-btn" aria-label="Back to Home">🏠</button>
             <button id="committed-theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
             <h1>Committed Partners</h1>
-
             <div class="input-grid">
-                <div class="input-column">
-                    <input type="text" id="c_name1" placeholder="Your Name" autocomplete="off">
-                    <input type="date" id="c_bday1" title="Your Birthdate">
-                    <input type="text" id="c_country1" placeholder="Your Country" autocomplete="off">
-                    <input type="text" id="c_sport1" placeholder="Your Favorite Sport" autocomplete="off">
-                </div>
-                <div class="input-column">
-                    <input type="text" id="c_name2" placeholder="Partner's Name" autocomplete="off">
-                    <input type="date" id="c_bday2" title="Partner's Birthdate">
-                    <input type="text" id="c_country2" placeholder="Partner's Country" autocomplete="off">
-                    <input type="text" id="c_sport2" placeholder="Partner's Favorite Sport" autocomplete="off">
-                </div>
+                <div class="input-column"><input type="text" id="c_name1" placeholder="Your Name" autocomplete="off"><input type="date" id="c_bday1" title="Your Birthdate"><input type="text" id="c_country1" placeholder="Your Country" autocomplete="off"><input type="text" id="c_sport1" placeholder="Your Favorite Sport" autocomplete="off"></div>
+                <div class="input-column"><input type="text" id="c_name2" placeholder="Partner's Name" autocomplete="off"><input type="date" id="c_bday2" title="Partner's Birthdate"><input type="text" id="c_country2" placeholder="Partner's Country" autocomplete="off"><input type="text" id="c_sport2" placeholder="Partner's Favorite Sport" autocomplete="off"></div>
             </div>
-            <div class="button-group">
-                <button id="calculateCommittedBtn">Calculate Love ❤️</button>
-                <button id="resetCommittedBtn">Reset</button>
-            </div>
+            <div class="button-group"><button id="calculateCommittedBtn">Calculate Love ❤️</button><button id="resetCommittedBtn">Reset</button></div>
             <div class="result" id="committed-result"></div>
         </div>
-
-        <!-- One-Sided Love Calculator -->
         <div id="one-sided-screen" class="container hidden">
             <button id="one-sided-home-btn" class="home-btn" aria-label="Back to Home">🏠</button>
             <button id="one-sided-theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
             <h1>One-Sided Love</h1>
-            <div class="input-grid-single">
-                <input type="text" id="os_name1" placeholder="Your Name" autocomplete="off">
-                <input type="date" id="os_bday1" title="Your Birthdate">
-                <input type="text" id="os_name2" placeholder="Their Name (Your Crush)" autocomplete="off">
-                <select id="os_looks">
-                    <option value="" disabled selected>How do they look?</option>
-                    <option value="beautiful">Beautiful</option>
-                    <option value="more-beautiful">More than beautiful</option>
-                    <option value="infinite-beauty">Infinite beauty</option>
-                    <option value="indescribable">A beauty you can't describe</option>
-                </select>
-                <select id="os_dress">
-                    <option value="" disabled selected>Which dress suits them best?</option>
-                    <option value="red">Red</option>
-                    <option value="black">Black</option>
-                    <option value="traditional">Traditional</option>
-                    <option value="anything">Anything they wear</option>
-                </select>
-                <select id="os_like">
-                    <option value="" disabled selected>What do you admire most?</option>
-                    <option value="eyes">Their Eyes</option>
-                    <option value="smile">Their Smile</option>
-                    <option value="personality">Their Personality</option>
-                    <option value="everything">Everything about them</option>
-                </select>
-            </div>
-            <div class="button-group">
-                <button id="calculateOneSidedBtn">Calculate Potential 💘</button>
-                <button id="resetOneSidedBtn">Reset</button>
-            </div>
+            <div class="input-grid-single"><input type="text" id="os_name1" placeholder="Your Name" autocomplete="off"><input type="date" id="os_bday1" title="Your Birthdate"><input type="text" id="os_name2" placeholder="Their Name (Your Crush)" autocomplete="off"><select id="os_looks"><option value="" disabled selected>How do they look?</option><option value="beautiful">Beautiful</option><option value="more-beautiful">More than beautiful</option><option value="infinite-beauty">Infinite beauty</option><option value="indescribable">A beauty you can't describe</option></select><select id="os_dress"><option value="" disabled selected>Which dress suits them best?</option><option value="red">Red</option><option value="black">Black</option><option value="traditional">Traditional</option><option value="anything">Anything they wear</option></select><select id="os_like"><option value="" disabled selected>What do you admire most?</option><option value="eyes">Their Eyes</option><option value="smile">Their Smile</option><option value="personality">Their Personality</option><option value="everything">Everything about them</option></select></div>
+            <div class="button-group"><button id="calculateOneSidedBtn">Calculate Potential 💘</button><button id="resetOneSidedBtn">Reset</button></div>
             <div class="result" id="one-sided-result"></div>
         </div>
-
-        <!-- IQ Test Screen -->
         <div id="iq-test-screen" class="container hidden">
             <button id="iq-quit-btn" class="home-btn" aria-label="Quit and go Home">🏠</button>
             <button id="iq-theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
@@ -136,20 +82,16 @@
             <h2 id="iq-question-text"></h2>
             <div id="iq-options-container"></div>
         </div>
-
-        <!-- IQ Result Screen -->
         <div id="iq-result-screen" class="container hidden">
             <h1>IQ Test Complete!</h1><p>Your Score:</p><div id="iq-final-score"></div><p id="iq-result-message"></p>
             <div id="brain-analysis" class="brain-analysis"><div id="brain-analysis-emoji"></div><div id="brain-analysis-text"></div></div>
             <div class="button-group"><button id="iq-restart-btn">Try Again</button><button id="iq-back-to-home-btn">Back to Home</button></div>
         </div>
-        
-        <!-- Reward Reveal Modal -->
         <div id="reward-reveal-modal" class="modal-overlay hidden"><div class="modal-content"><button id="closeRewardBtn" class="close-btn">×</button><h2 id="reward-title"></h2><div id="reward-emoji" class="reward-reveal-emoji"></div><p id="reward-text" class="reward-text-content"></p></div></div>
     </main>
 
     <footer class="footer">
-      <p>Made by Umer  ❤️ </p>
+      <p>Made by Umer ❤️</p>
       <p><a href="mailto:btumer83@gmail.com?subject=Feedback for Brainy Hearts App">Send Feedback</a></p>
     </footer>
     
