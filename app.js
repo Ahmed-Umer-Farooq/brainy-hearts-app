@@ -3,7 +3,7 @@
  * @version 15.0.0 FINAL
  */
 const brainyHeartsApp = {
-    // --- 1. CONFIGURATION & STATE ---
+    // --- 1. CONFIGURATION & CONTENT ---
     elements: {}, content: {}, iqScore: 0, currentIQQuestionIndex: 0, iqTimer: null, currentShuffledIQ: [],
 
     // --- 2. INITIALIZATION ---
