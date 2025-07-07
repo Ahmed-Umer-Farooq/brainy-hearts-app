@@ -36,8 +36,9 @@ body.dark-mode {
 .start-button:hover { transform: scale(1.05); box-shadow: 0 8px 30px var(--primary-accent); }
 .iq-button { background: var(--iq-accent); }
 .iq-button:hover { box-shadow: 0 8px 30px var(--iq-accent); }
-.install-btn { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: var(--secondary-accent); color: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 100; }
-.install-btn:hover { transform: translateX(-50%) scale(1.05); }
+.install-prompt { margin-top: 30px; min-height: 40px; }
+.install-btn { background: var(--secondary-accent); color: white; padding: 8px 15px; border: none; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+.install-btn:hover { transform: scale(1.05); }
 @keyframes heartbeat { 0%, 100% { transform: scale(1); } 10%, 30% { transform: scale(0.9); } 20%, 40%, 60%, 80% { transform: scale(1.1); } 50%, 70% { transform: scale(1.05); } }
 
 /* --- 3. REWARD & INSTALL MODALS --- */

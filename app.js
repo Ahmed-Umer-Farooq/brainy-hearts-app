@@ -1,6 +1,6 @@
 /**
  * Brainy Hearts - A Multifunctional App
- * @version 15.0.0 FINAL
+ * @version 16.0.0 FINAL
  */
 const brainyHeartsApp = {
     // --- 1. CONFIGURATION & STATE ---
@@ -81,7 +81,7 @@ const brainyHeartsApp = {
     showError(message, mode) { this.elements[`${mode}Result`].innerHTML = `<p style="color: red;">${message}</p>`; },
     typeWriter(element, text, callback) { if (!element) return; element.style.opacity = 1; element.innerHTML = ''; let i = 0; const type = () => { if (i < text.length) { element.innerHTML += text.charAt(i); i++; setTimeout(type, this.config.typewriterSpeed); } else if (callback) { callback(); } }; type(); },
 
-    // --- 7. THEME MANAGEMENT & UTILITIES ---
+    // --- 6. THEME MANAGEMENT & UTILITIES ---
     toggleDarkMode() { const isDark = document.body.classList.toggle("dark-mode"); const newIcon = isDark ? "☀️" : "🌙"; [this.elements.committedThemeToggle, this.elements.oneSidedThemeToggle, this.elements.iqThemeToggle].forEach(btn => { if(btn) btn.textContent = newIcon; }); localStorage.setItem('theme', isDark ? 'dark' : 'light'); },
     loadTheme() { if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); [this.elements.committedThemeToggle, this.elements.oneSidedThemeToggle, this.elements.iqThemeToggle].forEach(btn => { if(btn) btn.textContent = "☀️"; }); } },
     playSound(sound) { if (sound) { sound.currentTime = 0; sound.play().catch(e => console.error("Audio playback failed:", e)); } },
