@@ -1,0 +1,46 @@
+{
+    "iqQuestions": [
+        { "question": "What comes next: 2, 4, 8, 16, ?", "options": ["24", "30", "32", "64"], "correct": "32" },
+        { "question": "If 3 cats catch 3 mice in 3 minutes, how long for 100 cats to catch 100 mice?", "options": ["100 minutes", "300 minutes", "3 minutes", "1 minute"], "correct": "3 minutes" },
+        { "question": "Foot is to Shoe as Hand is to:", "options": ["Glove", "Finger", "Ring", "Thumb"], "correct": "Glove" },
+        { "question": "What has hands but can’t clap?", "options": ["A scarecrow", "An audience", "A clock", "A baby"], "correct": "A clock" },
+        { "question": "If all Bloops are Razzies and all Razzies are Lazzies, then all Bloops are definitely:", "options": ["Razzies", "Lazzies", "Bloops", "None of the above"], "correct": "Lazzies" },
+        { "question": "What gets wetter as it dries?", "options": ["A sponge", "Ice", "A towel", "A plant"], "correct": "A towel" },
+        { "question": "Which number is missing: 5, 10, 20, ?, 80", "options": ["30", "40", "50", "60"], "correct": "40" },
+        { "question": "The day before two days after Monday is:", "options": ["Sunday", "Tuesday", "Wednesday", "Saturday"], "correct": "Tuesday" },
+        { "question": "Puppy is to Dog as Kitten is to:", "options": ["Feline", "Cat", "Cub", "Lion"], "correct": "Cat" },
+        { "question": "What can you break, even if you never pick it up or touch it?", "options": ["The law", "A promise", "The silence", "The wind"], "correct": "A promise" },
+        { "question": "John's mother has four children: North, East, South, and...?", "options": ["West", "John", "Umer", "George"], "correct": "John" },
+        { "question": "What has a head, a tail, is brown, and has no legs?", "options": ["A snake", "A worm", "A coin", "A shadow"], "correct": "A coin" },
+        { "question": "Find the odd one out: 2, 3, 5, 7, 9, 11", "options": ["2", "5", "9", "11"], "correct": "9" },
+        { "question": "Which is heavier: 1kg of steel or 1kg of feathers?", "options": ["Steel", "Feathers", "Neither", "Depends on volume"], "correct": "Neither" },
+        { "question": "Tree is to Forest as Star is to:", "options": ["Planet", "Galaxy", "Sky", "Night"], "correct": "Galaxy" },
+        { "question": "What comes once in a minute, twice in a moment, but never in a thousand years?", "options": ["The letter M", "The number 1", "The letter O", "A second"], "correct": "The letter M" },
+        { "question": "If you rearrange the letters 'CIFAIPC' you would get the name of a:", "options": ["City", "Country", "Animal", "Ocean"], "correct": "Ocean" },
+        { "question": "What has many keys but can’t open a single lock?", "options": ["A treasure chest", "A keyboard", "A skeleton", "A piano"], "correct": "A piano" },
+        { "question": "What has one eye but can’t see?", "options": ["A needle", "A cyclops", "A storm", "A camera"], "correct": "A needle" },
+        { "question": "A cowboy rode into town on Friday. He stayed 3 days and left on Friday. How?", "options": ["He time traveled", "The town is called Friday", "His horse is named Friday", "It's a riddle with no answer"], "correct": "His horse is named Friday" },
+        { "question": "What can fill a room but takes up no space?", "options": ["Smoke", "Water", "Light", "Air"], "correct": "Light" },
+        { "question": "What has 13 hearts but no other organs?", "options": ["A squid", "An alien", "A deck of cards", "A classroom"], "correct": "A deck of cards" },
+        { "question": "What is full of holes but still holds water?", "options": ["A net", "A sponge", "A strainer", "A flute"], "correct": "A sponge" },
+        { "question": "What word is spelled incorrectly in every dictionary?", "options": ["Incorrectly", "Misspell", "Dictionary", "Onomatopoeia"], "correct": "Incorrectly" },
+        { "question": "What travels around the world while staying in the same corner?", "options": ["A pilot", "The sun", "A stamp", "A rumor"], "correct": "A stamp" },
+        { "question": "I have branches, but no fruit, trunk, or leaves. What am I?", "options": ["A river", "A family tree", "A bank", "A road"], "correct": "A bank" },
+        { "question": "What goes up but never comes down?", "options": ["Smoke", "A balloon", "Your age", "The temperature"], "correct": "Your age" },
+        { "question": "What belongs to you, but other people use it more than you do?", "options": ["Your money", "Your car", "Your name", "Your phone"], "correct": "Your name" },
+        { "question": "A man shaves several times a day, but still has a beard. Who is he?", "options": ["A werewolf", "A very hairy man", "A barber", "A magician"], "correct": "A barber" },
+        { "question": "If you have it, you want to share it. If you share it, you don’t have it. What is it?", "options": ["Money", "Gossip", "A secret", "A joke"], "correct": "A secret" }
+    ],
+    "lifeAdvice": [
+        "The best love is the kind that awakens the soul and makes us reach for more.", "True love is not found, it is built. Day by day, moment by moment.", "A successful relationship requires falling in love many times, always with the same person.", "Listen with curiosity. Speak with honesty. Act with integrity.", "The greatest happiness is to know the source of unhappiness.", "Patience is not the ability to wait, but the ability to keep a good attitude while waiting.", "Shared laughter is one of the most essential ingredients of a happy relationship.", "Growth is a process. Be kind to yourself and your partner along the journey.", "Before you can love another, you must first learn to love yourself.", "Communication is the fuel that keeps the fire of a relationship burning."
+    ],
+    "poetry": [
+        "You are my sun, my moon, and all my stars.", "In your light, I learn how to love.", "We are two souls, but with a single thought; two hearts that beat as one.", "My heart is, and always will be, yours.", "I would rather spend one lifetime with you, than face all the ages of this world alone.", "If I know what love is, it is because of you.", "Your hand touching mine. This is how galaxies collide.", "Love is a friendship set to music."
+    ],
+    "famousPoetry": [
+        { "author": "William Shakespeare", "text": "Doubt thou the stars are fire; Doubt that the sun doth move; Doubt truth to be a liar; But never doubt I love." },
+        { "author": "Elizabeth Barrett Browning", "text": "How do I love thee? Let me count the ways. I love thee to the depth and breadth and height My soul can reach." },
+        { "author": "Pablo Neruda", "text": "I love you without knowing how, or when, or from where. I love you simply, without problems or pride." },
+        { "author": "Rumi", "text": "The minute I heard my first love story, I started looking for you, not knowing how blind that was. Lovers don't finally meet somewhere. They're in each other all along." }
+    ]
+}

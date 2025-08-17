@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainy Hearts ❤️ | Love & Logic Games</title>
+
+    <meta
+      name="description"
+      content="Test your love compatibility and challenge your mind! Brainy Hearts is your hub for fun games of the heart and the brain."
+    />
+    <meta
+      name="keywords"
+      content="brainy hearts, love calculator, iq test, compatibility test, zodiac match, brain game, quiz"
+    />
+    <link rel="icon" type="image/png" href="icon-192x192.png" />
+
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#e91e63" />
+    <link rel="apple-touch-icon" href="icon-192x192.png" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://brainy-hearts-by-umer.netlify.app/"
+    />
+    <meta property="og:title" content="Brainy Hearts ❤️ | Love & Logic Games" />
+    <meta
+      property="og:description"
+      content="Test your love compatibility and challenge your mind with this fun and beautiful app!"
+    />
+    <meta property="og:image" content="preview.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://brainy-hearts-by-umer.netlify.app/"
+    />
+    <meta
+      property="twitter:title"
+      content="Brainy Hearts ❤️ | Love & Logic Games"
+    />
+    <meta
+      property="twitter:description"
+      content="Test your love compatibility and challenge your mind with this fun and beautiful app!"
+    />
+    <meta property="twitter:image" content="preview.jpg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app-wrapper">
+      <!-- Splash Screen (Preloader) -->
+      <div id="splash-screen">
+        <div class="splash-heart">❤️</div>
+      </div>
+
+      <!-- Start Screen Hub -->
+      <div id="start-screen" class="hidden">
+        <div class="start-content">
+          <h2 class="start-title">Brainy Hearts</h2>
+          <p class="start-subtitle">What would you like to do?</p>
+          <div class="start-button-group">
+              <button id="startSoulmatesBtn" class="start-button">
+                  💖 Love Calculator
+              </button>
+              <button id="startIQBtn" class="start-button iq-button">
+                  🧠 IQ Test
+              </button>
+          </div>
+          <div class="install-prompt">
+              <button
+                  id="installAppBtn"
+                  class="install-btn hidden"
+                  aria-label="Install App"
+              >
+                  ↓ Install App
+              </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Love Calculator Mode Selection Screen -->
+      <div id="love-mode-screen" class="hidden">
+        <div class="start-content">
+          <button
+            id="love-mode-home-btn"
+            class="home-btn"
+            aria-label="Back to Home"
+          >
+            🏠
+          </button>
+          <h2 class="start-title">Love Calculator</h2>
+          <p class="start-subtitle">What is your relationship status?</p>
+          <div class="start-button-group">
+            <button id="selectCommittedBtn" class="start-button">
+              💕 Committed Partners
+            </button>
+            <button id="selectOneSidedBtn" class="start-button">
+              💘 One-Sided Love
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main App Container (Committed Love Calculator) -->
+      <div id="committed-screen" class="container hidden">
+        <button
+          id="committed-home-btn"
+          class="home-btn"
+          aria-label="Back to Home"
+        >
+          🏠
+        </button>
+        <button
+          id="committed-theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle Dark Mode"
+        >
+          🌙
+        </button>
+        <h1>Committed Partners</h1>
+        <div class="input-grid">
+          <div class="input-column">
+            <input
+              type="text"
+              id="c_name1"
+              placeholder="Your Name"
+              autocomplete="off"
+            />
+            <input type="date" id="c_bday1" title="Your Birthdate" />
+            <input
+              type="text"
+              id="c_country1"
+              placeholder="Your Country"
+              autocomplete="off"
+            />
+            <input
+              type="text"
+              id="c_sport1"
+              placeholder="Your Favorite Sport"
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-column">
+            <input
+              type="text"
+              id="c_name2"
+              placeholder="Partner's Name"
+              autocomplete="off"
+            />
+            <input
+              type="date"
+              id="c_bday2"
+              title="Partner's Birthdate"
+            />
+            <input
+              type="text"
+              id="c_country2"
+              placeholder="Partner's Country"
+              autocomplete="off"
+            />
+            <input
+              type="text"
+              id="c_sport2"
+              placeholder="Partner's Favorite Sport"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="button-group">
+          <button id="calculateCommittedBtn">Calculate Love ❤️</button>
+          <button id="resetCommittedBtn">Reset</button>
+        </div>
+        <div id="committed-result-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+
+      <!-- One-Sided Love Calculator -->
+      <div id="one-sided-screen" class="container hidden">
+        <button
+          id="one-sided-home-btn"
+          class="home-btn"
+          aria-label="Back to Home"
+        >
+          🏠
+        </button>
+        <button
+          id="one-sided-theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle Dark Mode"
+        >
+          🌙
+        </button>
+        <h1>One-Sided Love</h1>
+        <div class="input-grid-single">
+          <input
+            type="text"
+            id="os_name1"
+            placeholder="Your Name"
+            autocomplete="off"
+          />
+          <input type="date" id="os_bday1" title="Your Birthdate" />
+          <input
+            type="text"
+            id="os_name2"
+            placeholder="Their Name (Your Crush)"
+            autocomplete="off"
+          />
+          <select id="os_looks">
+            <option value="" disabled selected>How do they look?</option>
+            <option value="beautiful">Beautiful</option>
+            <option value="more-beautiful">More than beautiful</option>
+            <option value="infinite-beauty">Infinite beauty</option>
+            <option value="indescribable">
+              A beauty you can't describe
+            </option>
+          </select>
+          <select id="os_dress">
+            <option value="" disabled selected>
+              Which dress suits them best?
+            </option>
+            <option value="red">Red</option>
+            <option value="black">Black</option>
+            <option value="traditional">Traditional</option>
+            <option value="anything">Anything they wear</option>
+          </select>
+          <select id="os_like">
+            <option value="" disabled selected>What do you admire most?</option>
+            <option value="eyes">Their Eyes</option>
+            <option value="smile">Their Smile</option>
+            <option value="personality">Their Personality</option>
+            <option value="everything">Everything about them</option>
+          </select>
+        </div>
+        <div class="button-group">
+          <button id="calculateOneSidedBtn">Calculate Potential 💘</button>
+          <button id="resetOneSidedBtn">Reset</button>
+        </div>
+        <div id="one-sided-result-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+
+      <!-- IQ Test Screen -->
+      <div id="iq-test-screen" class="container hidden">
+        <button id="iq-quit-btn" class="home-btn" aria-label="Quit and go Home">
+          🏠
+        </button>
+        <button
+          id="iq-theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle Dark Mode"
+        >
+          🌙
+        </button>
+        <div class="iq-header">
+          <div id="iq-question-counter"></div>
+          <div id="iq-timer"></div>
+        </div>
+        <h2 id="iq-question-text"></h2>
+        <div id="iq-options-container"></div>
+      </div>
+
+      <!-- IQ Result Screen -->
+      <div id="iq-result-screen" class="container hidden">
+        <h1>IQ Test Complete!</h1>
+        <p>Your Score:</p>
+        <div id="iq-final-score"></div>
+        <p id="iq-result-message"></p>
+        <div id="brain-analysis" class="brain-analysis">
+          <div id="brain-analysis-emoji"></div>
+          <div id="brain-analysis-text"></div>
+        </div>
+        <div class="button-group">
+          <button id="iq-restart-btn">Try Again</button>
+          <button id="iq-back-to-home-btn">Back to Home</button>
+        </div>
+      </div>
+
+
+      <!-- Reward Reveal Modal -->
+      <div id="reward-reveal-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button id="closeRewardBtn" class="close-btn">×</button>
+          <h2 id="reward-title"></h2>
+          <div id="reward-emoji" class="reward-reveal-emoji"></div>
+          <p id="reward-text" class="reward-text-content"></p>
+        </div>
+      </div>
+
+      <!-- Install Instructions Modal -->
+      <div id="install-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button id="closeInstallBtn" class="close-btn">×</button>
+          <h2>Install App</h2>
+          <div class="install-instructions">
+            <p><strong>For iPhone (Safari):</strong></p>
+            <p>
+              Tap the 'Share' button (
+              <img
+                src="https://i.imgur.com/336vVdD.png"
+                alt="iOS Share Icon"
+                class="inline-icon"
+              />
+              ), then scroll down and tap 'Add to Home Screen'.
+            </p>
+            <p><strong>For Android (Chrome):</strong></p>
+            <p>
+              Tap the 'More' button (
+              <img
+                src="https://i.imgur.com/n4N3p13.png"
+                alt="Android More Icon"
+                class="inline-icon"
+              />
+              ), then tap 'Install app' or 'Add to Home screen'.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Made with ❤️ by Umer</p>
+      <p>
+        <a
+          href="mailto:btumer83@gmail.com?subject=Feedback for Brainy Hearts App"
+          >Send Feedback</a
+        >
+      </p>
+    </footer>
+
+    <audio
+      id="clickSound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-modern-technology-select-3124.mp3"
+      preload="none"
+      crossorigin="anonymous"
+    ></audio>
+    <audio
+      id="celebrationSound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-fairy-bell-bless-864.mp3"
+      preload="none"
+      crossorigin="anonymous"
+    ></audio>
+    <audio
+      id="perfectMatchSound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-game-magic-dream-swoosh-2425.mp3"
+      preload="none"
+      crossorigin="anonymous"
+    ></audio>
+    <audio
+      id="rewardUnlockSound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"
+      preload="none"
+      crossorigin="anonymous"
+    ></audio>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registered successfully'))
+          .catch(error => console.log('Service Worker registration failed:', error));
+      }
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "brainy-hearts-app",
+  "version": "18.0.0",
+  "description": "A fun and interactive Progressive Web App that combines games of the heart and mind",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "serve": "python -m http.server 8080",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "love-calculator",
+    "iq-test",
+    "pwa",
+    "progressive-web-app",
+    "games",
+    "javascript",
+    "html5",
+    "css3"
+  ],
+  "author": "Umer <btumer83@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/brainy-hearts-app"
+  },
+  "bugs": {
+    "url": "https://github.com/username/brainy-hearts-app/issues"
+  },
+  "homepage": "https://brainy-hearts-by-umer.netlify.app/",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

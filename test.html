@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainy Hearts Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fde7f0, #ffe3f5);
+            min-height: 100vh;
+        }
+        .test-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .test-button:hover {
+            background: #e91e63;
+            transform: translateY(-2px);
+        }
+        .status {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 10px;
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔧 Brainy Hearts Debug Test</h1>
+        <p>This is a simple test to check if the server is working properly.</p>
+        
+        <div id="status" class="status">✅ HTML is loading correctly!</div>
+        
+        <button class="test-button" onclick="testJS()">Test JavaScript</button>
+        <button class="test-button" onclick="testCSS()">Test CSS</button>
+        <button class="test-button" onclick="loadMainApp()">Load Main App</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function testJS() {
+            document.getElementById('results').innerHTML = '<div class="status">✅ JavaScript is working!</div>';
+        }
+
+        function testCSS() {
+            const div = document.createElement('div');
+            div.innerHTML = '<div class="status">✅ CSS styles are applied!</div>';
+            document.getElementById('results').appendChild(div);
+        }
+
+        function loadMainApp() {
+            window.location.href = 'index.html';
+        }
+
+        // Auto-test on load
+        window.onload = function() {
+            console.log('Test page loaded successfully');
+            testJS();
+        }
+    </script>
+</body>
+</html>
